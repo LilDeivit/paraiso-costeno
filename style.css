@@ -1,0 +1,303 @@
+/* =========================================
+   CONFIGURACION BASE DE TODA LA PAGINA
+   ========================================= */
+* {
+    margin: 0; /* Elimina los margenes que ponen los navegadores por defecto */
+    padding: 0; /* Elimina los espacios internos por defecto */
+    box-sizing: border-box; /* Evita que los bordes o rellenos danen el tamano de las cajas */
+    font-family: 'Capriola', sans-serif; /* Aplica la fuente Capriola a todo el texto */
+}
+
+body {
+    background-color: #f4f4f9; /* Color gris muy clarito para el fondo de toda la pagina */
+    color: #333; /* Color gris oscuro para que los textos principales se lean bien */
+    line-height: 1.6; /* Separacion entre las lineas de texto para mejor lectura */
+}
+
+/* =========================================
+   TITULOS PRINCIPALES (DESTINOS, PAQUETES, ETC)
+   ========================================= */
+h2 {
+    text-align: center; /* Centra los titulos de cada seccion */
+    font-weight: bold; /* Hace la letra mas gruesa (negrita) */
+    margin-bottom: 20px; /* Separacion debajo del titulo antes del contenido */
+    color: #ED3A31; /* Color rojo para los titulos principales */
+}
+
+h3 {
+    color: #ED3A31; /* Color rojo para los subtitulos (nombres de playas, paquetes) */
+    font-weight: bold; /* Letra en negrita */
+}
+
+section {
+    padding: 40px 20px; /* Da un espacio de 40px arriba/abajo y 20px a los lados de cada seccion */
+}
+
+/* =========================================
+   ENCABEZADO (HEADER) Y MENU DE NAVEGACION
+   ========================================= */
+header {
+    position: sticky; /* Hace que el encabezado se quede pegado al hacer scroll */
+    top: 0; /* Lo pega exactamente en la parte superior de la pantalla */
+    z-index: 1000; /* Asegura que el menu siempre pase por encima del resto del contenido */
+    width: 100%; /* El menu ocupa todo el ancho de la pantalla */
+}
+
+.hero {
+    background-color: #ED3A31; /* Fondo rojo de la franja del titulo superior */
+    color: white; /* Color blanco para el texto del titulo principal */
+    padding: 20px; /* Espacio interno de la franja roja */
+    display: flex; /* Activa Flexbox para alinear elementos */
+    justify-content: center; /* Centra el texto y la bandera horizontalmente */
+    align-items: center; /* Centra el texto y la bandera verticalmente */
+    gap: 15px; /* Separacion entre el texto "Paraisos Costenos" y la bandera */
+}
+
+.hero h1 {
+    font-size: 2rem; /* Tamano de letra grande para el titulo de la pagina */
+    font-weight: 400; /* Grosor normal para que la fuente Capriola se vea elegante */
+}
+
+.img-bandera {
+    height: 40px; /* Altura especifica de la imagen de la bandera de Ecuador */
+    width: auto; /* Ancho automatico para no deformar la bandera */
+    border-radius: 4px; /* Bordes ligeramente redondeados en la bandera */
+}
+
+.menu {
+    list-style: none; /* Quita los puntos vineta de la lista del menu */
+    background-color: #001219; /* Fondo negro azulado oscuro para la barra de navegacion */
+    display: flex; /* Activa Flexbox para poner los enlaces uno al lado del otro */
+    flex-direction: row; /* Coloca los enlaces en fila horizontal */
+    flex-wrap: wrap; /* Si la pantalla es pequena, baja los botones a la siguiente linea */
+    justify-content: center; /* Centra todos los botones del menu */
+    padding: 10px 0; /* Espacio interno arriba y abajo de la barra del menu */
+}
+
+.menu li {
+    margin: 0 5px; /* Espacio de 5px a los lados de cada boton del menu */
+}
+
+.menu a {
+    color: white; /* Color blanco para las letras de los enlaces */
+    text-decoration: none; /* Quita el subrayado feo de los enlaces */
+    font-weight: bold; /* Pone las letras del menu en negrita */
+    padding: 10px 15px; /* Hace que el area para hacer clic sea mas grande */
+    display: block; /* Transforma el enlace en un bloque clicable */
+}
+
+/* =========================================
+   SECCION DE INTRODUCCION (MAPA Y TEXTO)
+   ========================================= */
+.intro-seccion {
+    text-align: center; /* Centra el texto de la introduccion */
+    max-width: 800px; /* Limita el ancho del texto para que no se estire demasiado en PC */
+    margin: 0 auto; /* Centra todo el bloque en medio de la pantalla */
+    padding: 40px 20px; /* Espacio interno de la seccion */
+    font-size: 1.2rem; /* Tamano de letra un poco mas grande para facilitar la lectura */
+    color: #432818; /* Color cafe oscuro para el texto de introduccion */
+}
+
+.intro-contenido {
+    display: flex; /* Activa Flexbox para organizar el mapa y el texto */
+    flex-direction: column; /* En celulares, pone el mapa arriba y el texto abajo */
+    align-items: center; /* Centra los elementos */
+    gap: 20px; /* Separacion entre la imagen del mapa y el texto */
+}
+
+.img-region {
+    max-width: 200px; /* Tamano maximo del mapa de la region costa */
+    height: auto; /* Mantiene la proporcion de la imagen */
+    border-radius: 8px; /* Bordes redondeados en la imagen del mapa */
+}
+
+/* =========================================
+   TARJETAS DE DESTINOS TURISTICOS
+   ========================================= */
+.grid-destinos {
+    display: grid; /* Activa CSS Grid para crear la cuadricula */
+    grid-template-columns: 1fr; /* En celulares, pone 1 sola columna de tarjetas */
+    gap: 20px; /* Separacion entre cada tarjeta de destino */
+}
+
+.card {
+    background: white; /* Fondo blanco para las tarjetas de las playas */
+    padding: 15px; /* Espacio entre el borde de la tarjeta y su contenido */
+    border-radius: 8px; /* Redondea las esquinas de las tarjetas */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Agrega una sombra suave debajo de la tarjeta */
+    text-align: center; /* Centra el texto dentro de la tarjeta */
+    border: 2px solid transparent; /* Crea un borde invisible para que no brinque al hacer hover */
+    transition: all 0.3s ease; /* Hace que las animaciones (hover) sean suaves */
+}
+
+.card:hover {
+    border: 2px solid #ED3A31; /* Pinta un borde rojo cuando el mouse pasa por encima */
+    transform: translateY(-5px); /* Levanta la tarjeta 5 pixeles hacia arriba al pasar el mouse */
+    box-shadow: 0 8px 15px rgba(237, 58, 49, 0.3); /* Hace la sombra mas grande y rojiza al pasar el mouse */
+}
+
+.card img {
+    width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
+    height: 200px; /* Altura fija para que todas las fotos se vean iguales */
+    object-fit: cover; /* Recorta la imagen sin deformarla para llenar el espacio */
+    border-radius: 5px; /* Redondea un poco las esquinas de las imagenes */
+}
+
+/* =========================================
+   GALERIA DE IMAGENES
+   ========================================= */
+.grid-galeria {
+    display: grid; /* Activa CSS Grid para la galeria */
+    grid-template-columns: repeat(2, 1fr); /* En celulares muestra 2 fotos por fila */
+    gap: 10px; /* Separacion pequena entre las fotos */
+}
+
+.grid-galeria img {
+    width: 100%; /* La imagen ocupa el espacio asignado en la cuadricula */
+    height: 150px; /* Altura fija para la galeria */
+    object-fit: cover; /* Recorta la imagen sin aplastarla */
+    border-radius: 5px; /* Bordes redondeados para las fotos de la galeria */
+}
+
+/* =========================================
+   PAQUETES TURISTICOS
+   ========================================= */
+.flex-paquetes {
+    display: flex; /* Activa Flexbox para alinear los paquetes */
+    flex-direction: column; /* En celulares, pone un paquete debajo del otro */
+    gap: 20px; /* Separacion entre paquetes */
+}
+
+.paquete {
+    background: #e7e0df; /* Fondo gris claro/beige para las cajas de paquetes */
+    padding: 20px; /* Espacio interno del paquete */
+    border-radius: 8px; /* Bordes redondeados */
+    text-align: center; /* Centra el texto del paquete */
+    border: 2px solid transparent; /* Borde invisible para la animacion */
+    transition: all 0.3s ease; /* Transicion suave para el efecto hover */
+}
+
+.paquete:hover {
+    border: 2px solid #001219; /* Borde negro oscuro al pasar el mouse */
+    transform: translateY(-5px); /* Levanta la caja hacia arriba al pasar el mouse */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Sombra oscura mas fuerte al hacer hover */
+}
+
+.precio {
+    font-size: 1.5rem; /* Hace el texto del precio bastante grande */
+    color: #e7210f; /* Color rojo brillante para destacar el precio */
+    font-weight: bold; /* Pone el precio en negrita */
+    margin-top: 10px; /* Lo separa un poco del texto de arriba */
+}
+
+/* =========================================
+   TABLA DE ITINERARIOS
+   ========================================= */
+.tabla-itinerario {
+    width: 100%; /* La tabla ocupa todo el ancho disponible */
+    max-width: 700px; /* Pero no crece mas de 700px para no verse estirada en PC */
+    margin: 0 auto; /* Centra la tabla en medio de la pantalla */
+    border-collapse: collapse; /* Elimina los espacios dobles entre los bordes de la tabla */
+    background-color: white; /* Fondo blanco para la tabla */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave para que parezca una tarjeta flotante */
+    border-radius: 8px; /* Redondea las esquinas de la tabla entera */
+    overflow: hidden; /* Oculta lo que se salga de los bordes redondeados */
+    transition: all 0.3s ease; /* Animacion suave al pasar el mouse */
+}
+
+.tabla-itinerario:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Sombra negra oscura al pasar el mouse */
+    transform: translateY(-3px); /* Levanta la tabla levemente al pasar el mouse */
+}
+
+.tabla-itinerario th {
+    background-color: #ED3A31; /* Fondo rojo para la cabecera de la tabla (Hora y Actividad) */
+    color: white; /* Letras blancas en la cabecera */
+    padding: 15px; /* Espacio interno de las celdas de la cabecera */
+    text-align: left; /* Alinea los titulos de la tabla a la izquierda */
+    font-size: 1.1rem; /* Tamano de letra de los titulos de la tabla */
+}
+
+.tabla-itinerario td {
+    padding: 15px; /* Espacio interno de las celdas normales de informacion */
+    border-bottom: 1px solid #ddd; /* Dibuja una linea gris finita debajo de cada fila */
+}
+
+.tabla-itinerario tr:last-child td {
+    border-bottom: none; /* Quita la linea de la ultima fila para que se vea limpio el borde inferior */
+}
+
+/* =========================================
+   FORMULARIO DE CONTACTO
+   ========================================= */
+.formulario {
+    display: flex; /* Activa Flexbox para poner los campos uno debajo del otro */
+    flex-direction: column; /* Apila los campos verticalmente */
+    max-width: 500px; /* Limita el ancho del formulario en PC */
+    margin: 0 auto; /* Centra el formulario en la pantalla */
+    background: white; /* Fondo blanco de la caja del formulario */
+    padding: 20px; /* Espacio interno del formulario */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra suave debajo del formulario */
+}
+
+.formulario label {
+    margin-top: 10px; /* Separa los textos descriptivos de la caja de arriba */
+    font-weight: bold; /* Pone las etiquetas (Nombre, Correo) en negrita */
+}
+
+.formulario input, .formulario select, .formulario textarea {
+    padding: 10px; /* Espacio interno dentro de las cajitas donde se escribe */
+    margin-top: 5px; /* Separacion pequena entre el label y la cajita */
+    border: 1px solid #ccc; /* Borde gris clarito para los campos */
+    border-radius: 5px; /* Bordes levemente redondeados en los campos de escritura */
+}
+
+.formulario button {
+    margin-top: 20px; /* Separa el boton del ultimo campo de texto */
+    background-color: #ED3A31; /* Fondo rojo para el boton de Enviar */
+    color: white; /* Letras blancas para el boton */
+    padding: 10px; /* Tamano interno del boton */
+    border: none; /* Quita el borde por defecto del boton */
+    border-radius: 5px; /* Bordes redondeados del boton */
+    cursor: pointer; /* Cambia el mouse a una manito cuando pasa por encima */
+    font-size: 1.1rem; /* Tamano de la letra del boton */
+    font-weight: bold; /* Texto en negrita para el boton */
+}
+
+/* =========================================
+   PIE DE PAGINA (FOOTER)
+   ========================================= */
+footer {
+    text-align: center; /* Centra el texto de los derechos reservados */
+    padding: 20px; /* Espacio interno del pie de pagina */
+    background-color: #001219; /* Fondo negro oscuro para el pie de pagina */
+    color: white; /* Letras blancas */
+    margin-top: 20px; /* Lo separa del formulario que esta arriba */
+}
+
+/* =========================================
+   MEDIA QUERIES (ADAPTACION PARA COMPUTADORAS / PANTALLAS GRANDES)
+   ========================================= */
+@media (min-width: 768px) {
+    .intro-contenido {
+        flex-direction: row; /* En PC, pone el mapa y el texto uno al lado del otro */
+        text-align: left; /* Alinea el texto de introduccion a la izquierda */
+    }
+
+    .grid-destinos {
+        grid-template-columns: repeat(3, 1fr); /* En PC, crea 3 columnas para las tarjetas de destinos */
+    }
+
+    .grid-galeria {
+        grid-template-columns: repeat(3, 1fr); /* En PC, crea 3 columnas para la galeria de fotos */
+    }
+
+    .flex-paquetes {
+        flex-direction: row; /* En PC, pone los paquetes turisticos en fila horizontal */
+    }
+    
+    .paquete {
+        flex: 1; /* Hace que todos los paquetes ocupen exactamente el mismo ancho */
+    }
+}
